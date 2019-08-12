@@ -1,7 +1,8 @@
-package com.example.doga
+package com.example.doga.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.doga.R
 
 class MainActivity : AppCompatActivity() {
 
