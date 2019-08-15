@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="125dp">
+
+        <ImageView
+                android:id="@+id/imageView"
+                android:padding="4dp"
+                android:layout_width="0dp"
+                tools:src="@mipmap/ic_dogs_icon"
+                android:layout_height="match_parent"
+                android:layout_weight="2"/>
+        <LinearLayout
+                android:layout_weight="3"
+                android:padding="4dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+            <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Title"
+                    tools:text="DogName"/>
+            <TextView
+                    android:id="@+id/lifespan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Text"
+                    tools:text="Life Span"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

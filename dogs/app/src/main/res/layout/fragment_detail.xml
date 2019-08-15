@@ -2,12 +2,54 @@
 <layout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:context=".view.DetailFragment">
 
+        <ImageView
+                android:id="@+id/dogImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_dogs_icon"
+                android:scaleType="fitCenter"
+                android:minHeight="200dp"/>
 
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+                android:id="@+id/dogName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dogImage"
+                tools:text="Dog Name"
+                style="@style/Title"
+                android:layout_margin="4dp"
+                android:layout_centerHorizontal="true"/>
+        <TextView
+                android:id="@+id/dogPurpose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dogName"
+                tools:text="Dog Purpose"
+                style="@style/Title"
+                android:layout_margin="4dp"
+                android:layout_centerHorizontal="true"/>
+        <TextView
+                android:id="@+id/dogTemperament"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dogPurpose"
+                tools:text="Dog Temperament"
+                style="@style/Title"
+                android:layout_margin="4dp"
+                android:layout_centerHorizontal="true"/>
+        <TextView
+                android:id="@+id/dogLifespan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dogTemperament"
+                tools:text="Dog Lifespan"
+                style="@style/Title"
+                android:layout_margin="4dp"
+                android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
 </layout>
