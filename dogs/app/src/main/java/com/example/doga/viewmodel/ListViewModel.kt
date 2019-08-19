@@ -3,6 +3,7 @@ package com.example.doga.viewmodel
 import android.app.Application
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.doga.Util.SharedPreferenceHelper
 import com.example.doga.model.DogBreed
 import com.example.doga.model.DogDatabase
 import com.example.doga.model.DogsApiService
@@ -13,6 +14,8 @@ import io.reactivex.schedulers.Schedulers
 import kotlinx.coroutines.launch
 
 class ListViewModel(application: Application): BaseViewModel(application) {
+
+    private val prefHelper = SharedPreferenceHelper(getApplication())
 
     private val dogService = DogsApiService()
     private val disposable = CompositeDisposable()
@@ -62,6 +65,7 @@ class ListViewModel(application: Application): BaseViewModel(application) {
             }
             dogRetrived(dogsList)
         }
+        prefHelper.saveUpdateTime(System.nanoTime())
     }
     override fun onCleared() {
         super.onCleared()
