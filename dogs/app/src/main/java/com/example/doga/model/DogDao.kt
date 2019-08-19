@@ -10,7 +10,10 @@ interface DogDao {
     suspend fun insertAll(vararg dogs:DogBreed): List<Long>
 
     @Query("SELECT * FROM dogbreed WHERE uuid= :dogId")
-    suspend fun getAllDogs(dogId:Int):DogBreed
+    suspend fun getDog(dogId:Int):DogBreed
+
+    @Query("SELECT * FROM dogbreed")
+    suspend fun getAllDogs():List<DogBreed>
 
     @Query("DELETE FROM dogbreed")
     suspend fun deleteAllDogs()

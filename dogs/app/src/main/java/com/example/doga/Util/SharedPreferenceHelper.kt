@@ -30,4 +30,6 @@ class SharedPreferenceHelper {
             putLong(PREF_TIME,time)
         }
     }
+
+    fun getUpdateTime():Long? = prefs?.getLong(PREF_TIME,0)
 }
