@@ -13,7 +13,7 @@ import com.example.doga.databinding.ItemDogBinding
 import com.example.doga.model.DogBreed
 import kotlinx.android.synthetic.main.item_dog.view.*
 
-class DogListAdapter(val dogList: ArrayList<DogBreed>):RecyclerView.Adapter<DogListAdapter.DogViewHolder>() {
+class DogListAdapter(val dogList: ArrayList<DogBreed>):RecyclerView.Adapter<DogListAdapter.DogViewHolder>(), DogClickListener {
 
     fun updateDogList(newDogList: List<DogBreed>){
         dogList.clear()
@@ -28,6 +28,7 @@ class DogListAdapter(val dogList: ArrayList<DogBreed>):RecyclerView.Adapter<DogL
 
     override fun onBindViewHolder(holder: DogViewHolder, position: Int) {3
         holder.view.dog = dogList[position]
+        holder.view.listener = this
 //        holder.view.name.text = dogList[position].dogBreed
 //        holder.view.lifespan.text = dogList[position].lifeSpan
 //        holder.view.setOnClickListener {
@@ -36,6 +37,12 @@ class DogListAdapter(val dogList: ArrayList<DogBreed>):RecyclerView.Adapter<DogL
 //            Navigation.findNavController(it).navigate(action)
 //        }
 //        holder.view.imageView.loadImage(dogList[position].imageUrl, getProgressDrawable(holder.view.imageView.context))
+    }
+
+    override fun onDogClicked(v: View) {
+        val action = ListFragmentDirections.actionDetailFragment()
+            action.dogUuid = v.dogId.text.toString().toInt()
+            Navigation.findNavController(v).navigate(action)
     }
 
     class DogViewHolder(var view:ItemDogBinding):RecyclerView.ViewHolder(view.root)
