@@ -14,6 +14,7 @@ import androidx.navigation.Navigation
 import com.example.doga.R
 import com.example.doga.Util.getProgressDrawable
 import com.example.doga.Util.loadImage
+import com.example.doga.databinding.FragmentDetailBinding
 import com.example.doga.viewmodel.DetailsViewModel
 import kotlinx.android.synthetic.main.fragment_detail.*
 
@@ -43,11 +44,7 @@ class DetailFragment : Fragment() {
 
         detailsViewModel.dogLiveData.observe(this, Observer {
             it?.let {dogs->
-                dogName.text= dogs.dogBreed
-                dogLifespan.text = dogs.lifeSpan
-                dogPurpose.text = dogs.breedFor
-                dogTemperament.text = dogs.temperament
-                dogImage.loadImage(dogs.imageUrl, getProgressDrawable(context!!.applicationContext))
+                FragmentDetailBinding.bind(view).dogDetails = dogs
             }
         })
 
