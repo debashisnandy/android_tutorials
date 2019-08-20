@@ -7,8 +7,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doga.R
-import com.example.doga.Util.getProgressDrawable
-import com.example.doga.Util.loadImage
 import com.example.doga.databinding.ItemDogBinding
 import com.example.doga.model.DogBreed
 import kotlinx.android.synthetic.main.item_dog.view.*

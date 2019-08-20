@@ -2,7 +2,6 @@ package com.example.doga.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.example.doga.model.DogBreed
 import com.example.doga.model.DogDatabase
 import kotlinx.coroutines.launch

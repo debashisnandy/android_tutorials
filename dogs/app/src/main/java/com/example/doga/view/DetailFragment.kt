@@ -2,21 +2,15 @@ package com.example.doga.view
 
 
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import androidx.navigation.Navigation
-
 import com.example.doga.R
-import com.example.doga.Util.getProgressDrawable
-import com.example.doga.Util.loadImage
 import com.example.doga.databinding.FragmentDetailBinding
 import com.example.doga.viewmodel.DetailsViewModel
-import kotlinx.android.synthetic.main.fragment_detail.*
 
 
 class DetailFragment : Fragment() {
