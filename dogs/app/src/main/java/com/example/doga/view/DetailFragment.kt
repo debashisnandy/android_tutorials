@@ -12,6 +12,8 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 
 import com.example.doga.R
+import com.example.doga.Util.getProgressDrawable
+import com.example.doga.Util.loadImage
 import com.example.doga.viewmodel.DetailsViewModel
 import kotlinx.android.synthetic.main.fragment_detail.*
 
@@ -36,9 +38,8 @@ class DetailFragment : Fragment() {
 
         arguments?.let {
             dogUUID = DetailFragmentArgs.fromBundle(it).dogUuid
+            detailsViewModel.fetch(dogUUID)
         }
-
-        detailsViewModel.fetch()
 
         detailsViewModel.dogLiveData.observe(this, Observer {
             it?.let {dogs->
@@ -46,6 +47,7 @@ class DetailFragment : Fragment() {
                 dogLifespan.text = dogs.lifeSpan
                 dogPurpose.text = dogs.breedFor
                 dogTemperament.text = dogs.temperament
+                dogImage.loadImage(dogs.imageUrl, getProgressDrawable(context!!.applicationContext))
             }
         })
 
