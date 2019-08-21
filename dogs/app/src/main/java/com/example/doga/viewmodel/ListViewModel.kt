@@ -3,6 +3,7 @@ package com.example.doga.viewmodel
 import android.app.Application
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
+import com.example.doga.Util.NotificationHelper
 import com.example.doga.Util.SharedPreferenceHelper
 import com.example.doga.model.DogBreed
 import com.example.doga.model.DogDatabase
@@ -59,6 +60,7 @@ class ListViewModel(application: Application): BaseViewModel(application) {
                     override fun onSuccess(dogsList: List<DogBreed>) {
                         storeDogsLocally(dogsList)
                         Toast.makeText(getApplication(),"Data retrieved from remote",Toast.LENGTH_LONG).show()
+                        NotificationHelper(getApplication()).createNotification()
                     }
 
                     override fun onError(e: Throwable) {
