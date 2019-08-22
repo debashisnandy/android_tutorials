@@ -4,9 +4,7 @@ package com.example.doga.view
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -31,6 +29,7 @@ class DetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        setHasOptionsMenu(true)
         fragmentDataBind = DataBindingUtil.inflate(inflater,R.layout.fragment_detail,container,false)
         return fragmentDataBind.root
     }
@@ -76,5 +75,25 @@ class DetailFragment : Fragment() {
                         }
                 }
             })
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.details_menu,menu)
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when (item.itemId){
+            R.id.action_send_sms->{
+
+            }
+            R.id.action_share->{
+
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 }
