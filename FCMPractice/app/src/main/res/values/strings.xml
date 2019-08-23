@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">FCMPractice</string>
+    <string name="default_notification_channel_id">2542</string>
 </resources>
