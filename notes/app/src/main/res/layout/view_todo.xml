@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.notes.views.TodoView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/completeCheckBox"
+            android:layout_marginStart="@dimen/item_margin_default"
+            android:layout_marginEnd="@dimen/item_margin_default"
+            app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/descriptionView"
+            app:layout_constraintTop_toTopOf="@+id/completeCheckBox"
+            app:layout_constraintBottom_toBottomOf="@+id/completeCheckBox"
+            app:layout_constraintStart_toEndOf="@+id/completeCheckBox"
+            android:layout_marginStart="@dimen/item_margin_default"
+            android:layout_marginEnd="@dimen/item_margin_default"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"/>
+</com.example.notes.views.TodoView>
